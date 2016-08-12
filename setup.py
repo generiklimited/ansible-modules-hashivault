@@ -20,12 +20,12 @@ reads the fie value::
     - hosts: localhost
       tasks:
         - hashivault_write:
-            secret: giant
+            secret: secret/giant
             data:
                 foo: foe
                 fie: fum
-        - hashivault_read: secret='giant' key='fie' register='fie'
-        - debug: msg="Value is {{fie.value}}"
+        - hashivault_read: secret='secret/giant' register='fie'
+        - debug: msg="Value is {{fie.data}}"
 
 If you are not using the VAULT_ADDR and VAULT_TOKEN environment variables,
 you may be able to simplify your playbooks with an action plugin.  This can

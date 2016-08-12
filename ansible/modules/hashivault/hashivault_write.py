@@ -33,7 +33,7 @@ options:
         default: False
     secret:
         description:
-            - secret to read.
+            - secret path to write to.
         default: False
     data:
         description:
@@ -49,7 +49,7 @@ EXAMPLES = '''
 - hosts: localhost
   tasks:
     - hashivault_write:
-        secret: giant
+        secret: secret/giant
         data:
             foo: foe
             fie: fum

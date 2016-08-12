@@ -33,11 +33,7 @@ options:
         default: False
     secret:
         description:
-            - secret to read.
-        default: False
-    key:
-        description:
-            - secret key to read.
+            - secret path to read.
         default: False
     register:
         description:
@@ -48,8 +44,8 @@ EXAMPLES = '''
 ---
 - hosts: localhost
   tasks:
-    - hashivault_read: secret='giant' key='fie' register='fie'
-    - debug: msg="Value is {{fie.value}}"
+    - hashivault_read: secret='secret/giant' register='fie'
+    - debug: msg="Value is {{fie.data}}"
 '''
 
 
