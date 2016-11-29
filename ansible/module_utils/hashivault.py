@@ -88,7 +88,7 @@ def hashivault_write(params):
                 client.write(('%s' % secret), **write_data)
                 result['msg'] = "Secret %s updated" % secret
             else:
-                client.write(('%s' % secret), **data)
+                result['data'] = client.write(('%s' % secret), **data)
                 result['msg'] = "Secret %s written" % secret
         result['changed'] = True
     except Exception as e:
